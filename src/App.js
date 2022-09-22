@@ -7,22 +7,28 @@ function App() {
 
   const increaseTemp = () => {
     setTemp((prevTemp) => prevTemp + 1);
-    if (temp >= 80) {
+    if (temp >= 79) {
+      console.log(`temp is ${temp}`);
       setTempColor("hot");
-    } else if (temp < 80 && temp >= 70) {
+    } else if (temp < 81 && temp >= 70) {
+      console.log(`temp is ${temp}`);
       setTempColor("warm");
     } else {
+      console.log(`temp is ${temp}`);
       setTempColor("cold");
     }
   };
 
   const decreaseTemp = () => {
     setTemp((prevTemp) => prevTemp - 1);
-    if (temp >= 80) {
+    if (temp >= 79) {
+      console.log(`temp is ${temp}`);
       setTempColor("hot");
-    } else if (temp < 80 && temp >= 70) {
+    } else if (temp < 80 && temp > 70) {
+      console.log(`temp is ${temp}`);
       setTempColor("warm");
     } else {
+      console.log(`temp is ${temp}`);
       setTempColor("cold");
     }
   };
