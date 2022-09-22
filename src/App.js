@@ -3,15 +3,38 @@ import { useState } from "react";
 
 function App() {
   const [temp, setTemp] = useState(70);
+  const [tempColor, setTempColor] = useState("warm");
+
+  const increaseTemp = () => {
+    setTemp((prevTemp) => prevTemp + 1);
+    if (temp >= 80) {
+      setTempColor("hot");
+    } else if (temp < 80 && temp >= 70) {
+      setTempColor("warm");
+    } else {
+      setTempColor("cold");
+    }
+  };
+
+  const decreaseTemp = () => {
+    setTemp((prevTemp) => prevTemp - 1);
+    if (temp >= 80) {
+      setTempColor("hot");
+    } else if (temp < 80 && temp >= 70) {
+      setTempColor("warm");
+    } else {
+      setTempColor("cold");
+    }
+  };
 
   return (
     <div className="app-container">
       <div className="temperature-display-container">
-        <div className="temperature-display">{temp}°F</div>
+        <div className={`temperature-display ${tempColor}`}>{temp}°F</div>
       </div>
       <div className="button-container">
-        <button onClick={() => setTemp((prevTemp) => prevTemp + 1)}>+</button>
-        <button onClick={() => setTemp((prevTemp) => prevTemp - 1)}>-</button>
+        <button onClick={increaseTemp}>+</button>
+        <button onClick={decreaseTemp}>-</button>
       </div>
     </div>
   );

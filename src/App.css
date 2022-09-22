@@ -71,6 +71,10 @@ button:focus {
   background: #035aa6;
 }
 
+.warm {
+  background: rgb(211, 211, 5);
+}
+
 .hot {
   background: #ff5200;
 }
