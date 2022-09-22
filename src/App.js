@@ -6,31 +6,23 @@ function App() {
   const [tempColor, setTempColor] = useState("warm");
 
   const increaseTemp = () => {
-    setTemp((prevTemp) => prevTemp + 1);
-    if (temp >= 79) {
-      console.log(`temp is ${temp}`);
+    if (temp > 78) {
       setTempColor("hot");
-    } else if (temp < 81 && temp >= 70) {
-      console.log(`temp is ${temp}`);
+    } else if (temp < 81 && temp > 68) {
       setTempColor("warm");
-    } else {
-      console.log(`temp is ${temp}`);
-      setTempColor("cold");
+    } else if (temp < 70) {
+      setTempColor("warm");
     }
+    setTemp((prevTemp) => prevTemp + 1);
   };
 
   const decreaseTemp = () => {
-    setTemp((prevTemp) => prevTemp - 1);
-    if (temp >= 79) {
-      console.log(`temp is ${temp}`);
-      setTempColor("hot");
-    } else if (temp < 80 && temp > 70) {
-      console.log(`temp is ${temp}`);
+    if (temp < 81 && temp > 70) {
       setTempColor("warm");
-    } else {
-      console.log(`temp is ${temp}`);
+    } else if (temp < 72) {
       setTempColor("cold");
     }
+    setTemp((prevTemp) => prevTemp - 1);
   };
 
   return (
